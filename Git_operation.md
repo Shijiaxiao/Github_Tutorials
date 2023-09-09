@@ -1,13 +1,10 @@
 # Tutorial of Git
 
-> hihihi
---- hello
-
-This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
+>This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
 
 ## 1 What is Git?
 
-Git is a distributed version control system (DVCS) that allows developers to track and manage changes to their codebase efficiently.
+>Git is a distributed version control system (DVCS) that allows developers to track and manage changes to their codebase efficiently.
 
 In Git, developers can work on a project collaboratively and keep a complete history of all changes made to the code. Git enables features like branching, merging, and distributed workflows, making it easier to manage code changes, collaborate with others, and maintain a history of a project's development.
 
@@ -19,7 +16,7 @@ Here are some key features of Git:
 * Security: Git uses cryptographic techniques to ensure the integrity and authenticity of code changes.
 
 
-## 2. Repository and branch, local and remote
+## 2 Local/remote and Repository/branch
 
 A repository in Git is a container that holds the entire project's code and history, while a branch is a separate line of development within that repository, allowing developers to work on specific features or fixes independently before merging them into the main codebase.
 
@@ -31,60 +28,56 @@ In Git, the local repository resides on a developer's machine and contains the c
 
 ### 2.1 What is **_"master"_**, **_"origin"_** and **_"origin/master"_**?
 
-* **_"origin"_** is remote repository, while **_"master"_** is a one of the branches.
-* Usually local repository does not have a name, if you want to name it, run the following command during initialization:
+* **_"origin"_** is the usual name of remote repository.
+* **_"master"_** is a one of the branches.
+* **_"origin/master"_** is the **reference** of one of the branches of the remote repository. It represents the state of the "master" branch of the remote repository.
+
+Git pulls the latest changes from the remote repository when you give the following command, including updating the information for the "origin/master" reference:
+``` zsh
+git fetch prigin
+```
+
+Usually local repository does not have a name, if you want to name it, run the following command during initialization:
 ``` zsh
 git init local_repository_name
 ```
 
-### master
-"master"是你的本地主分支，通常是你当前工作的分支。本地主分支通常用于跟踪远程仓库的主分支（通常也是"master"分支），你可以在本地进行开发工作，然后将更改推送到远程仓库的"master"分支。
-
-### origin
-"origin"是Git中一个常见的远程仓库的默认别名（也可以自定义），通常用于指代你与之交互的远程仓库。
-
-### origin/master
-"origin/master"是远程仓库"origin"的"master"分支的引用。它表示远程仓库的"master"分支的状态。当你运行"git fetch origin"时，Git 会从远程仓库拉取最新的更改，包括更新"origin/master"引用的信息。
-
-### 查看本地分支和远程分支的不同
+You can view the differences between local and remote branches with this command:
 ``` zsh
 git diff master origin/master
 ```
 
+### 2.2 What is **"reference"**
 
-## 2. What is **"Reference"**
-Git中的引用（Reference是一种**_指针_**或**_标签_**，它指向一个特定的提交（commit）。引用通常用于标识和跟踪各种Git对象，最常见的引用类型是分支和标签。引用允许你轻松地查找和访问 Git 仓库中的不同提交。
+>A Reference in Git is a **_ pointer_** or **_label_** that points to a specific commit, which make the Git repository's history and branch structure easy to manage and navigate.
 
-引用使得Git仓库的历史记录和分支结构易于管理和浏览。你可以使用Git命令来查看和操作引用，如"git branch", "git checkout"等。
-
-### 分支引用
-分支是Git中的一个重要概念，每个分支都有一个关联的引用，它指向分支所在的最新提交。例如，"master"分支是一个引用，它**指向"master分支上的最新提交**。分支引用允许你轻松地切换和管理不同的分支。
-
-### 远程分支引用
-远程分支是与远程仓库相关联的分支，它们的引用通常具有形式如"origin/master"的名称。这些引用**指向远程仓库的分支上的最新提交**，允许你跟踪和拉取远程仓库的更改。
-
-### 标签引用
-标签是一种具有描述性名称的引用，通常用于标识特定的提交，如软件版本发布。标签引用指向一个特定的提交，它通常不会移动。
+* Branch reference
+Each branch has an associated reference that **points to the latest commit** on which the branch is located.
+* Remote branch reference
+Remote branche reference **points to the latest commit** on a branch of the remote repository.
+* Label references
+Label reference **points to a specific commit such as a software release**, and it usually doesn't move.
 
 
+## 3 Manage you code with Git
 
-## 3. Initialize and first commit
+### 3.1 Initialize a Git repository and first commit
 ``` zsh
-git init
+git init (your_repository_name)
 git add .
 git commit -m "first commit"
-git branch -M master       # Rename local branch to "master"(mostly main at first).
-git remote add origin git@github.com:Shijiaxiao/repository.git
-git push -u origin master  # "-u" at first, set remote brach to the upstream one.                     
+git branch -M master       # Rename local branch to "master"(mostly "main" at first).
+git remote add origin git@github.com:username/your_repository.git
+git push -u origin master  # "-u" at first, set remote brach to the upstream one.
 ```
 
-### Difference between "-M" and "-m"
+**Difference between "-M" and "-m":**
 * -M is force, it will cover duplication of name.
 * -m is not force, it won't cover duplication of name.
 
-### What is "-u" for
+**What is "-u" for?**
 * It can set remote brach to the upstream one.
-After using "-u", you can use more simple commands to operate git. 
+* You can use the following simple commands to operate git after set remote brach to the upstream one:
 ``` zsh
 git fetch
 git merge
@@ -92,71 +85,72 @@ git pull
 git push
 ```
 
-
-## 4. Clone an existing repository online
-Clone the whole repository(1 folder)
+### 3.2 Clone an existing repository online
+Clone the whole repository(the whole repository folder) with the following comand:
 ``` zsh
 git clone git@github.com:Shijiaxiao/repository.git
 ```
 
+### 3.3 Update local repository from remote repository
 
-## 5. Update repository
-
-### Fetch and merge from github
+**3.3.1 Fetch and merge from GitHub**
 ``` zsh
-git fetch origin master     # "git fetch" if "-u" has been applied.
-git checkout origin/master  # 查看远程分支部分代码
-git checkout master         # 回到本地分支
-git merge origin/master     # 检查无误后合并 "git merge" if "-u" has been applied.
+git fetch origin master     # "git fetch" if remote brach has been setto the upstream one.
+git checkout origin/master  # checkout code of remote branch of repository
+git checkout master         # back to local branch
+git merge origin/master     # merge them after check. using "git merge" if remote brach has been setto the upstream one.
 ```
 
-### Pull from github(automatically merge)
+**3.3.2 Pull from GitHub(automatically merge)**
 ``` zsh
-git pull origin master      # "git pull" if "-u" has been applied.
+git pull origin master      # use "git pull" if remote brach has been setto the upstream one.
 ```
 
-### Commit change
+**3.3.3 Add and commit change, save change to history**
 ``` zsh
 git add .
 git commit -m "edit comment"
 ```
 
-### Upload to github
+**3.3.4 Upload final edition of local branch to remote repository on GitHub**
 ``` zsh
-git push origin master      # "git push" if "-u" has been applied.
+git push origin master      # use "git push" if remote brach has been setto the upstream one.
 ```
 
 
-## 6. Useful operations
+## 4 Other useful Git operations
 
-### Global settings
+### 4.1 Global settings
 ``` zsh
-git config --global user.name "ShiJiaxiao"        # Git全局设置
-git config --global user.email "jxshi2003@sina.com"   # Git全局设置
+git config --global user.name "username"            
+git config --global user.email "your_email"   
 ```
 
-### Status check
+### 4.2 Check status of local repositpry
 ``` zsh
-git status            # 查看本地仓库状态
+git status  
 ```
 
-### Correlation between local and remote repository
+### 4.3 Correlat3 local repository with a remote one
 ``` zsh
-git remote rm origin                                                 # 删除之前的关联
-git remote add origin git@github.com:Shijiaxiao/repository.git       # 设置关联
-git remote set-url origin git@github.com:Shijiaxiao/repository.git   # 更改关联关联
+git remote rm origin                                                 # Delete the previous association.
+git remote add origin git@github.com:Shijiaxiao/repository.git       # Set association.
+git remote set-url origin git@github.com:Shijiaxiao/repository.git   # Change association.
 ```
 
-### Branch of local and remote repository
+### 4.4 Check branchs of local and remote repository
 ``` zsh
-git branch            # 查看本地所有分支
-git branch -r         # 查看远程所有分支
-git branch -a         # 查看所有分支
-git branch -M/-m ...  # Rename branch.
+git branch               # Check all local branches.
+git branch -r            # Check all remote branches.
+git branch -a            # Check all branches.
+git branch -M/-m (name)  # Rename branch.
 ```
 
-### What should be added in **_.gitignore_**
+### 4.5 What should be added in **_.gitignore_**
 ``` zsh
 .DS_Store
+```
+You also can run the following command:
+``` zsh
 git rm --cached .DS_Store
 ```
