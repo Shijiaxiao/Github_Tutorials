@@ -9,11 +9,11 @@ Git is a distributed version control system (DVCS) that allows developers to tra
 In Git, developers can work on a project collaboratively and keep a complete history of all changes made to the code. Git enables features like branching, merging, and distributed workflows, making it easier to manage code changes, collaborate with others, and maintain a history of a project's development.
 
 > Key features of Git:
-* Distributed Version Control: Every developer has a full copy of the repository, which allows them to work offline and independently. Changes can be synchronized with remote repositories when needed.
-* Branching and Merging: Git makes it easy to create branches for new features or bug fixes and merge them back into the main codebase when they are ready.
-* Commit History: Git maintains a detailed history of all changes, making it possible to track who made each change, when it was made, and why.
-* Collaboration: Multiple developers can collaborate on the same project by pushing and pulling changes to and from a shared repository.
-* Security: Git uses cryptographic techniques to ensure the integrity and authenticity of code changes.
+> * Distributed Version Control: Every developer has a full copy of the repository, which allows them to work offline and independently. Changes can be synchronized with remote repositories when needed.
+> * Branching and Merging: Git makes it easy to create branches for new features or bug fixes and merge them back into the main codebase when they are ready.
+> * Commit History: Git maintains a detailed history of all changes, making it possible to track who made each change, when it was made, and why.
+> * Collaboration: Multiple developers can collaborate on the same project by pushing and pulling changes to and from a shared repository.
+> * Security: Git uses cryptographic techniques to ensure the integrity and authenticity of code changes.
 
 
 ## 2 Local vs remote and Repository vs branch
@@ -33,13 +33,11 @@ In Git, the local repository resides on a developer's machine and contains the c
 * **_"master"_** is a one of the branches.
 * **_"origin/master"_** is the **reference** of one of the branches of the remote repository. It represents the state of the "master" branch of the remote repository.
 
-> Usually local repository does not have a name, if you want to name it, run the following command during initialization:
 ``` zsh
+# Usually local repository does not have a name, if you want to name it, run the following command during initialization:
 git init local_repository_name
-```
 
-> You can view the differences between local and remote branches with this command:
-``` zsh
+# You can view the differences between local and remote branches with this command:
 git diff master origin/master
 ```
 
@@ -53,7 +51,7 @@ A Reference in Git is a **_ pointer_** or **_label_** that points to a specific 
 * Remote branch reference:
     Remote branche reference **points to the latest commit** on a branch of the remote repository.
 * Label references:
-Label reference **points to a specific commit such as a software release**, and it usually doesn't move.
+    Label reference **points to a specific commit such as a software release**, and it usually doesn't move.
 
 
 ## 3 Manage you code with Git
