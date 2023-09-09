@@ -1,14 +1,14 @@
 # Tutorial of Git
 
->This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
+This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
 
 ## 1 What is Git?
 
->Git is a distributed version control system (DVCS) that allows developers to track and manage changes to their codebase efficiently.
+Git is a distributed version control system (DVCS) that allows developers to track and manage changes to their codebase efficiently.
 
 In Git, developers can work on a project collaboratively and keep a complete history of all changes made to the code. Git enables features like branching, merging, and distributed workflows, making it easier to manage code changes, collaborate with others, and maintain a history of a project's development.
 
-Here are some key features of Git:
+> Key features of Git:
 * Distributed Version Control: Every developer has a full copy of the repository, which allows them to work offline and independently. Changes can be synchronized with remote repositories when needed.
 * Branching and Merging: Git makes it easy to create branches for new features or bug fixes and merge them back into the main codebase when they are ready.
 * Commit History: Git maintains a detailed history of all changes, making it possible to track who made each change, when it was made, and why.
@@ -16,12 +16,13 @@ Here are some key features of Git:
 * Security: Git uses cryptographic techniques to ensure the integrity and authenticity of code changes.
 
 
-## 2 Local/remote and Repository/branch
+## 2 Local vs remote and Repository vs branch
 
 A repository in Git is a container that holds the entire project's code and history, while a branch is a separate line of development within that repository, allowing developers to work on specific features or fixes independently before merging them into the main codebase.
 
 In Git, the local repository resides on a developer's machine and contains the complete project history and code. The remote repository is hosted on a server (like GitHub or GitLab) and serves as a central hub where developers can share and collaborate on the code, enabling distributed development and remote synchronization.
 
+> Tips of your repositoty:
 * It is recommended that every repository include a **_README_**, **_LICENSE_**, and **_.gitignore_**.
 * SSH of your remote repository: git@github.com:username/your_repository.git
 
@@ -32,30 +33,26 @@ In Git, the local repository resides on a developer's machine and contains the c
 * **_"master"_** is a one of the branches.
 * **_"origin/master"_** is the **reference** of one of the branches of the remote repository. It represents the state of the "master" branch of the remote repository.
 
-Git pulls the latest changes from the remote repository when you give the following command, including updating the information for the "origin/master" reference:
-``` zsh
-git fetch prigin
-```
-
-Usually local repository does not have a name, if you want to name it, run the following command during initialization:
+> Usually local repository does not have a name, if you want to name it, run the following command during initialization:
 ``` zsh
 git init local_repository_name
 ```
 
-You can view the differences between local and remote branches with this command:
+> You can view the differences between local and remote branches with this command:
 ``` zsh
 git diff master origin/master
 ```
 
 ### 2.2 What is **"reference"**
 
->A Reference in Git is a **_ pointer_** or **_label_** that points to a specific commit, which make the Git repository's history and branch structure easy to manage and navigate.
+A Reference in Git is a **_ pointer_** or **_label_** that points to a specific commit, which make the Git repository's history and branch structure easy to manage and navigate.
 
-* Branch reference
-Each branch has an associated reference that **points to the latest commit** on which the branch is located.
-* Remote branch reference
-Remote branche reference **points to the latest commit** on a branch of the remote repository.
-* Label references
+> Types of reference:
+* Branch reference:
+    Each branch has an associated reference that **points to the latest commit** on which the branch is located.
+* Remote branch reference:
+    Remote branche reference **points to the latest commit** on a branch of the remote repository.
+* Label references:
 Label reference **points to a specific commit such as a software release**, and it usually doesn't move.
 
 
@@ -71,11 +68,11 @@ git remote add origin git@github.com:username/your_repository.git
 git push -u origin master  # "-u" at first, set remote brach to the upstream one.
 ```
 
-**Difference between "-M" and "-m":**
-* -M is force, it will cover duplication of name.
-* -m is not force, it won't cover duplication of name.
+**3.1.1 Difference between "-M" and "-m":**
+* "-M" is force, it will cover duplication of name.
+* "-m" is not force, it won't cover duplication of name.
 
-**What is "-u" for?**
+**3.1.2 What is "-u" for?**
 * It can set remote brach to the upstream one.
 * You can use the following simple commands to operate git after set remote brach to the upstream one:
 ``` zsh
@@ -86,7 +83,7 @@ git push
 ```
 
 ### 3.2 Clone an existing repository online
-Clone the whole repository(the whole repository folder) with the following comand:
+> You can clone the whole repository(the whole repository folder) with the following comand:
 ``` zsh
 git clone git@github.com:Shijiaxiao/repository.git
 ```
@@ -96,14 +93,14 @@ git clone git@github.com:Shijiaxiao/repository.git
 **3.3.1 Fetch and merge from GitHub**
 ``` zsh
 git fetch origin master     # "git fetch" if remote brach has been setto the upstream one.
-git checkout origin/master  # checkout code of remote branch of repository
-git checkout master         # back to local branch
-git merge origin/master     # merge them after check. using "git merge" if remote brach has been setto the upstream one.
+git checkout origin/master  # Checkout code of remote branch of repository
+git checkout master         # Back to local branch
+git merge origin/master     # Merge them after check. using "git merge" if remote brach has been setto the upstream one.
 ```
 
 **3.3.2 Pull from GitHub(automatically merge)**
 ``` zsh
-git pull origin master      # use "git pull" if remote brach has been setto the upstream one.
+git pull origin master      # Use "git pull" if remote brach has been setto the upstream one.
 ```
 
 **3.3.3 Add and commit change, save change to history**
@@ -114,7 +111,7 @@ git commit -m "edit comment"
 
 **3.3.4 Upload final edition of local branch to remote repository on GitHub**
 ``` zsh
-git push origin master      # use "git push" if remote brach has been setto the upstream one.
+git push origin master      # Use "git push" if remote brach has been setto the upstream one.
 ```
 
 
@@ -150,7 +147,7 @@ git branch -M/-m (name)  # Rename branch.
 ``` zsh
 .DS_Store
 ```
-You also can run the following command:
+> You also can run the following command:
 ``` zsh
 git rm --cached .DS_Store
 ```
