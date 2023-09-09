@@ -10,9 +10,9 @@ My repository SSH: git@github.com:Shijiaxiao/repository.git
 git init
 git add .
 git commit -m "first commit"
-git branch -M master
+git branch -M master (first commit)
 git remote add origin git@github.com:Shijiaxiao/repository.git
-git push -u origin master
+git push (-u) origin master
 ```
 
 
