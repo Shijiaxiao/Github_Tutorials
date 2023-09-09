@@ -5,7 +5,7 @@ My repository SSH: git@github.com:Shijiaxiao/repository.git
 
 
 
-## 1. 仓库和分支，What is **_master_**, **_origin_** and **_origin/mmater_**
+## 1. 仓库和分支，What is **"master"**, **"origin"** and **"origin/master"**
 
 * **origin是远程仓库，master是分支**
 * 通常本地仓库没有名字，如果想命名，初始化时运行以下语句：
@@ -28,7 +28,7 @@ git diff master origin/master
 ```
 
 
-## 2. What is ##_Reference_**
+## 2. What is **"Reference"**
 Git中的引用（Reference是一种**_指针_**或**_标签_**，它指向一个特定的提交（commit）。引用通常用于标识和跟踪各种Git对象，最常见的引用类型是分支和标签。引用允许你轻松地查找和访问 Git 仓库中的不同提交。
 
 引用使得Git仓库的历史记录和分支结构易于管理和浏览。你可以使用Git命令来查看和操作引用，如"git branch", "git checkout"等。
