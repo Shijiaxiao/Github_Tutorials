@@ -8,20 +8,20 @@
 ```
 
 ## Text
-* 斜体：使用"*"或"_"将文本包裹起来
-* 粗体：使用"**"或"__"将文本包裹起来
+* Italics: Wrap the text with "*" or "_".
+* Bold: Wrap the text with "**" or "__".
   
 ## Links
 ``` markdown
-[链接文本](链接URL)
+[TEXT](Link URL)
 ```
 
 ## List
 ``` markdown
-1. 项目1
-2. 项目2
-* 项目1
-* 项目2
+1. Project1
+2. Project2
+* Tip1
+* Tip2
 ```
 
 ## Reference
@@ -35,7 +35,7 @@ Create with "```", you can specify program language.
 
 ## Images
 ``` markdown
-![替代文本](图片URL)
+![TEXT](Image URL)
 ```
 
 ## Horizontal line
