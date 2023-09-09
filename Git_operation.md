@@ -1,14 +1,39 @@
-# A Tutorial to Github Repository
-It is recommended that every repository include a **_README_**, **_LICENSE_**, and **_.gitignore_**.
+# Tutorial of Git
 
-My repository SSH: git@github.com:Shijiaxiao/repository.git
+This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
+1. s
+2. w
+3. w
 
 
+## 1 What is Git?
 
-## 1. 仓库和分支，What is **"master"**, **"origin"** and **"origin/master"**
+Git is a distributed version control system (DVCS) that allows developers to track and manage changes to their codebase efficiently.
 
-* **origin是远程仓库，master是分支**
-* 通常本地仓库没有名字，如果想命名，初始化时运行以下语句：
+In Git, developers can work on a project collaboratively and keep a complete history of all changes made to the code. Git enables features like branching, merging, and distributed workflows, making it easier to manage code changes, collaborate with others, and maintain a history of a project's development.
+
+Here are some key features of Git:
+* Distributed Version Control: Every developer has a full copy of the repository, which allows them to work offline and independently. Changes can be synchronized with remote repositories when needed.
+* Branching and Merging: Git makes it easy to create branches for new features or bug fixes and merge them back into the main codebase when they are ready.
+* Commit History: Git maintains a detailed history of all changes, making it possible to track who made each change, when it was made, and why.
+* Collaboration: Multiple developers can collaborate on the same project by pushing and pulling changes to and from a shared repository.
+* Security: Git uses cryptographic techniques to ensure the integrity and authenticity of code changes.
+
+
+## 2. Repository and branch, local and remote
+
+A repository in Git is a container that holds the entire project's code and history, while a branch is a separate line of development within that repository, allowing developers to work on specific features or fixes independently before merging them into the main codebase.
+
+In Git, the local repository resides on a developer's machine and contains the complete project history and code. The remote repository is hosted on a server (like GitHub or GitLab) and serves as a central hub where developers can share and collaborate on the code, enabling distributed development and remote synchronization.
+
+* It is recommended that every repository include a **_README_**, **_LICENSE_**, and **_.gitignore_**.
+* SSH of your remote repository: git@github.com:username/your_repository.git
+
+
+## 2.1 Repository and branch? What is **_"master"_**, **_"origin"_** and **_"origin/master"_**?
+
+* **_"origin"_** is remote repository, while **_"master"_** is a one of the branches.
+* Usually local repository does not have a name, if you want to name it, run the following command during initialization:
 ``` zsh
 git init local_repository_name
 ```
