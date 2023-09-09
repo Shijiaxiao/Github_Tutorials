@@ -8,9 +8,9 @@
 ```
 
 ## Text
-* 斜体：使用*或_将文本包裹起来，例如 *斜体* 或 _斜体_。
-* 粗体：使用**或__将文本包裹起来，例如 **粗体** 或 __粗体__
-
+* 斜体：使用"*"或"_"将文本包裹起来
+* 粗体：使用"**"或"__"将文本包裹起来
+  
 ## Links
 ``` markdown
 [链接文本](链接URL)
@@ -25,12 +25,13 @@
 ```
 
 ## Reference
+Create with ">".
 ``` markdown
 > This is a reference.
 ```
 
 ## Code
-Create with "``` cpp ```", you can specify program language
+Create with "```", you can specify program language.
 
 ## Images
 ``` markdown
@@ -38,4 +39,4 @@ Create with "``` cpp ```", you can specify program language
 ```
 
 ## Horizontal line
-Create with "---"
+Create with "---", "***" or "___".
