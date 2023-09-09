@@ -1,7 +1,7 @@
 # A Tutorial to Github Repository
 It is recommended that every repository include a **_README_**, **_LICENSE_**, and **_.gitignore_**.
 
-My repository SSH: git@github.com:Shijiaxiao/<repository>.git
+My repository SSH: git@github.com:Shijiaxiao/repository.git
 
 
 
@@ -11,7 +11,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M master
-git remote add origin git@github.com:Shijiaxiao/<repository>.git
+git remote add origin git@github.com:Shijiaxiao/repository.git
 git push -u origin master
 ```
 
@@ -19,7 +19,7 @@ git push -u origin master
 ## Clone an existing repository online
 Clone the whole repository(1 folder)
 ``` zsh
-git clone git@github.com:Shijiaxiao/<repository>.git
+git clone git@github.com:Shijiaxiao/repository.git
 ```
 
 
@@ -54,7 +54,7 @@ git push origin master
 
 ### Global settings
 ``` zsh
-git config --global user.name "ShiJiaxiao_HIT"        # Git全局设置
+git config --global user.name "ShiJiaxiao"        # Git全局设置
 git config --global user.email "jxshi2003@sina.com"   # Git全局设置
 ```
 
@@ -69,8 +69,8 @@ git branch -a   # 查看所有分支
 ### Correlation between local and remote repository
 ``` zsh
 git remote rm origin                                                   # 删除之前的关联
-git remote add origin git@github.com:Shijiaxiao/<repository>.git       # 设置关联
-git remote set-url origin git@github.com:your-username/your-repo.git   # 更改关联关联
+git remote add origin git@github.com:Shijiaxiao/repository.git       # 设置关联
+git remote set-url origin git@github.com:Shijiaxiao/repository.git   # 更改关联关联
 ```
 
 ### Branch of local and remote repository
