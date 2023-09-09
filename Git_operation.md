@@ -1,10 +1,9 @@
 # Tutorial of Git
 
-This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
-1. s
-2. w
-3. w
+> hihihi
+--- hello
 
+This is a tutorial of Git and its basic operations, which aims to help you get better understanding and use of Git.
 
 ## 1 What is Git?
 
@@ -30,7 +29,7 @@ In Git, the local repository resides on a developer's machine and contains the c
 * SSH of your remote repository: git@github.com:username/your_repository.git
 
 
-## 2.1 Repository and branch? What is **_"master"_**, **_"origin"_** and **_"origin/master"_**?
+### 2.1 What is **_"master"_**, **_"origin"_** and **_"origin/master"_**?
 
 * **_"origin"_** is remote repository, while **_"master"_** is a one of the branches.
 * Usually local repository does not have a name, if you want to name it, run the following command during initialization:
